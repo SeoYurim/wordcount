@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="Wrapper">
+  <h1 class="text-center" style="font-family: 'Gaegu', cursive; color: blue;">여기가 메인화면이에요:-) </h1>
+  <br>
+  <br>
+  <h3 class="text-center" style="font-family: 'Gaegu', cursive;">아래에 문장을 적으시면 단어수를 count! 해드립니다</h3>
+  <form action="{% url 'result' %}">
+    <div class="form-group" style="padding:40px;">
+      <textarea class="form-control form-control-sm" rows="10" name="fulltext"></textarea>
+      <br>
+      <div class="text center">
+        <input class="btn btn-primary" type="submit" value="Count">
+      </div>
+    </div>
+  </form>
+</div>
+
+{%endblock%}

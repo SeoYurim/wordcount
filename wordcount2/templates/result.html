@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<h1 class="text-center" style="font-family: 'Gaegu', cursive;">result</h1>
+<br>
+<br>
+<h3 class="text-center" style="font-family: 'Gaegu', cursive;">당신이 입력한 텍스트는 총
+  <div style="color: red; display: inline-block;">{{total}}</div>단어로 구성되어 있습니다.</h3>
+
+<br>
+
+<div class="card w-75" style="margin : 0 auto;">
+  <div class="card-body" style="text-align : center; font-family: 'Gaegu', cursive;">
+    <h5 class="card-title">입력한 텍스트: {{full}}</h5>
+    <br>
+    <h6 class="card-text">[단어 카운트]</h6>
+    {% for word, howmany in dictionary %} {{word}} : {{howmany}}
+    <br> {% endfor %}
+  </div>
+  <a href="{%url 'home' %}" class="btn btn-success">Return</a>
+</div>
+
+{% endblock %}
